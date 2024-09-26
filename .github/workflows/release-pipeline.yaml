@@ -1,9 +1,8 @@
 name: Hillel Gitflow Release Pipeline
 
 on:
-  - push
-#  release:
-#    types: [created]
+  release:
+    types: [created]
 
 jobs:
   build-release:
