@@ -14,10 +14,15 @@ public class AppUI extends JFrame {
     private JTextField strLenField = new JTextField();
     private JButton strLenBtn = new JButton("String");
 
+    private JLabel strUpperLabel = new JLabel("To upper case");
+    private JTextField strUpperField = new JTextField();
+    private JButton strUpperBtn = new JButton("To upper");
+    private JLabel strUpperResultLabel = new JLabel("");
+
     {
-        setSize(400, 120);
+        setSize(400, 200);
         setTitle("Gitflow Demo");
-        setLayout(new GridLayout(2, 3));
+        setLayout(new GridLayout(4, 3));
 
         add(strLenLabel);
         add(new JLabel(""));
@@ -27,7 +32,17 @@ public class AppUI extends JFrame {
         add(strLenBtn);
         add(strLenResultLabel);
 
+        add(strUpperLabel);
+        add(new JLabel(""));
+        add(new JLabel(""));
+
+        add(strUpperField);
+        add(strUpperBtn);
+        add(strUpperResultLabel);
+
+
         strLenBtn.addActionListener(this::onStrLenBtnClicked);
+        strUpperBtn.addActionListener(this::onStrUpperBtnClicked);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
@@ -41,5 +56,11 @@ public class AppUI extends JFrame {
         String text = strLenField.getText();
         int stringLength = stringManager.stringLength(text);
         strLenResultLabel.setText(String.valueOf(stringLength));
+    }
+
+    private void onStrUpperBtnClicked(ActionEvent e) {
+        String text = strUpperField.getText();
+        String s = stringManager.stringUpper(text);
+        strUpperResultLabel.setText(s);
     }
 }

@@ -5,4 +5,9 @@ public class StringManagerDefault implements StringManager {
     public int stringLength(String string) {
         return string.length();
     }
+
+    @Override
+    public String stringUpper(String string) {
+        return string.toUpperCase();
+    }
 }
