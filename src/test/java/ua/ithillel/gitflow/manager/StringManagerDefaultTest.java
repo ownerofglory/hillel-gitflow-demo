@@ -16,4 +16,14 @@ public class StringManagerDefaultTest {
 
         assertEquals(expectedLength, actualLength);
     }
+
+    @Test
+    public void stringUpper() {
+        String testString = "Hello";
+        String expectedString = "HELLO";
+
+        String actualString = stringManager.stringUpper(testString);
+
+        assertEquals(expectedString, actualString);
+    }
 }
